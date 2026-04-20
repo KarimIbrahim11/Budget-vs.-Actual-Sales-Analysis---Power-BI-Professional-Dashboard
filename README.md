@@ -9,13 +9,14 @@ The dashboard transforms raw, fragmented data into actionable business intellige
 
 ## 📂 Project Structure
 To maintain a professional workflow, the repository is organized as follows:
-* 📁 **[Power BI Report](./Power%20BI%20Report/)**: Contains the core `.pbix` file.
-* 📁 **[raw data](./raw%20data/)**: The original datasets (Excel/CSV) before processing.
-* 📁 **[docs](./docs/)**: Detailed technical documentation including:
-    * `Data_Modeling.md`: Deep dive into the Multi-Fact Star Schema.
-    * `DAX_Measures.md`: Library of all measures used.
-    * `Business_Insights.md`: Comprehensive analysis of the findings.
-* 📁 **[Screenshots](./Screenshots/)**: Visual previews of the dashboard and data model.
+
+* 📁 **[Power BI Report](./Power%20BI%20Report/)**: Contains the main dashboard file `Budget vs Actual.pbix`.
+* 📁 **[raw data](./raw%20data/)**: The original Excel/CSV datasets used as the data source before cleaning and transformation.
+* 📁 **[docs](./docs/)**: Detailed technical and business documentation:
+    * `Data_Modeling.md`: Explaining the Multi-Fact Star Schema and relationships.
+    * `DAX_Measures.md`: A complete library of all DAX formulas with their business logic.
+    * `Business_Insights.md`: A deep-dive analysis of the sales trends and variance findings.
+* 📁 **[images](./images/)**: Visual previews, screenshots of the dashboard, and the data model schema.
 
 ---
 
@@ -51,7 +52,8 @@ Advanced DAX was implemented to calculate dynamic metrics, including:
 ---
 
 ## 🚀 How to Explore this Project
-1. **View the Dashboard:** Download the `.pbix` file from the [Power BI Report](./Power%20BI%20Report/) folder.
-2. **Review the Logic:** Check the [docs/DAX_Measures.md](./docs/DAX_Measures.md) for the calculation formulas.
-3. **Analyze the Findings:** Read the [docs/Business_Insights.md](./docs/Business_Insights.md) for the full business report.
+1. **View the Dashboard:** Navigate to the [Power BI Report](./Power%20BI%20Report/) folder and download `Budget vs Actual.pbix`.
+2. **Understand the Architecture:** Check [docs/Data_Modeling.md](./docs/Data_Modeling.md) to see how the tables are connected.
+3. **Review the Logic:** Check [docs/DAX_Measures.md](./docs/DAX_Measures.md) for the specific formulas and calculations used.
+4. **Analyze the Results:** Read the [docs/Business_Insights.md](./docs/Business_Insights.md) for a summary of the business performance and recommendations.
 
