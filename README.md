@@ -1,39 +1,57 @@
-# Budget vs. Actual Sales Analysis - Power BI Professional Dashboard
+# 📊 Budget vs. Actual Sales Analysis - Power BI Professional Dashboard
 
-## 📌 Project Overview
-This project focuses on a comprehensive financial analysis comparing **Actual Sales** against **Budgeted Targets**. The dashboard provides deep insights into revenue performance, product distribution, and monthly variance trends, enabling data-driven decision-making for financial planning and performance management.
+## 📝 Project Overview
+This project provides a high-level financial performance analysis, comparing **Actual Sales** against **Budgeted Targets**. It is designed to help stakeholders identify performance gaps, monitor seasonal trends, and analyze product-level contributions to overall revenue.
 
-## 🛠️ Data Preparation & ETL (Power Query)
-The raw data required significant transformation to reach a structured format for analysis:
-* **Normalization (Unpivoting):** Transformed budget and actual sales sheets by unpivoting month columns into rows to enable time-series analysis.
-* **Data Cleaning:** * Removed "Quarterly Total" rows to maintain data granularity and prevent calculation errors.
-    * Promoted headers and adjusted data types for consistency.
-* **Transposing Data:** Fixed the `Region` table structure by transposing columns (Country ID, Country) from horizontal to vertical format.
-* **Time Intelligence:** Created a dedicated **Calendar Table** to support advanced DAX calculations like YTD and MOM.
-
-## 🏗️ Data Modeling (Star Schema)
-* **Fact Tables:** `Actual Sales`, `Budget` (containing values and dates).
-* **Dimension Tables:** `Product Data`, `Region`, and `Calendar Table`.
-* **Measures Table:** A centralized table for all DAX measures (Actual YTD, MOM%, Variance, etc.).
-* **Relationships:** Established 1:N (One-to-Many) relationships between dimensions and facts.
-
-## 📈 Key Business Insights
-1.  **Financial Achievement:** Total Actual Sales reached **$5.72M**, exceeding the Budget of **$5.64M** by **1.43%**.
-2.  **Product Mix:** Revenue is well-distributed; **Bikes** lead with **26.32%**, while **Parts**, **Service & Repairs**, and **Clothing** each contribute approximately **24-25%**.
-3.  **Monthly Variance:** * **January** was the peak performance month with a **+$19K** variance.
-    * **November and June** followed with strong growth (**+$18K**).
-    * **May** was the lowest performing month, dipping **-$4K** below target.
-4.  **Trend Analysis:** The **Waterfall Chart** reveals high volatility in the second half of the year, with a significant deviation in **October (-$49K)** followed by a strong recovery in November.
-5.  **Growth Stability:** The **Actual YTD** consistently outperformed the **Budget YTD**, indicating healthy year-over-year progress.
-
-## 🚀 Technologies & Skills Used
-* **Power BI Desktop**
-* **Power Query (M Language):** Data cleaning, Unpivoting, and Transposing.
-* **DAX (Data Analysis Expressions):** Time Intelligence (YTD, Previous Month) and Variance % calculations.
-* **Data Modeling:** Star Schema design and Relationship management.
-
-## 📂 Project Structure
-* `Budget_vs_Actual.pbix`: The main Power BI file.
-* `Screenshots/`: Folder containing dashboard visuals and data model images.
+The dashboard transforms raw, fragmented data into actionable business intelligence using advanced Power BI techniques.
 
 ---
+
+## 📂 Project Structure
+To maintain a professional workflow, the repository is organized as follows:
+* 📁 **[Power BI Report](./Power%20BI%20Report/)**: Contains the core `.pbix` file.
+* 📁 **[raw data](./raw%20data/)**: The original datasets (Excel/CSV) before processing.
+* 📁 **[docs](./docs/)**: Detailed technical documentation including:
+    * `Data_Modeling.md`: Deep dive into the Multi-Fact Star Schema.
+    * `DAX_Measures.md`: Library of all measures used.
+    * `Business_Insights.md`: Comprehensive analysis of the findings.
+* 📁 **[Screenshots](./Screenshots/)**: Visual previews of the dashboard and data model.
+
+---
+
+## 🛠️ Technical Deep Dive
+
+### 1. Data Transformation 
+Using **Power Query**, the data underwent a rigorous cleaning process:
+* **Normalization:** Unpivoted monthly columns into a row-based format for time-series analysis.
+* **Data Integrity:** Removed "Total" rows and corrected headers to prevent double-counting.
+* **Structural Fixes:** Transposed the `Region` table to align geographical data vertically.
+* **Date Standardization:** Developed a custom **Calendar Table** to support Time Intelligence.
+
+### 2. Data Modeling
+The model follows a **Multi-Fact Star Schema** (Fact Constellation) architecture:
+* **Two Fact Tables:** `Actual Sales` and `Budget` are kept separate to manage different data granularities.
+* **Shared Dimensions:** Both facts are filtered by common dimensions (`Calendar Table` and `Region`) via **1:N (One-to-Many)** relationships.
+* **Optimized Filtering:** Single-direction cross-filtering ensures high performance and accurate DAX calculations.
+
+### 3. DAX Capabilities
+Advanced DAX was implemented to calculate dynamic metrics, including:
+* **Time Intelligence:** YTD (Year-To-Date) and MOM (Month-Over-Month) growth.
+* **Variance Analysis:** Absolute and percentage deviations from the budget.
+* **Dynamic UI:** Measures like `Select Country` for interactive dashboard titles.
+
+---
+
+## 📈 Executive Insights
+* **Target Achievement:** The company exceeded its annual budget by **1.43%**, reaching a total of **$5.72M** in sales.
+* **Product Mix:** **Bikes** are the primary revenue driver (26.32%), while other categories maintain a healthy balance (approx. 24% each).
+* **Performance Trends:** Significant performance spikes occurred in **January** and **June**, while **October** showed the highest volatility with a **-9.99%** MOM drop.
+* **Financial Stability:** Actual YTD performance consistently stayed above Budget YTD throughout the fiscal year.
+
+---
+
+## 🚀 How to Explore this Project
+1. **View the Dashboard:** Download the `.pbix` file from the [Power BI Report](./Power%20BI%20Report/) folder.
+2. **Review the Logic:** Check the [docs/DAX_Measures.md](./docs/DAX_Measures.md) for the calculation formulas.
+3. **Analyze the Findings:** Read the [docs/Business_Insights.md](./docs/Business_Insights.md) for the full business report.
+
